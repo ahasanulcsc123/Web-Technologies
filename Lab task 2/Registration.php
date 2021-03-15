@@ -1,65 +1,108 @@
-<!DocType html>
+<?php include "control/Results.php"; ?>
+<!DOCTYPE html>
 <html>
-<head>
-<title>My example </title>
-</head>
-<body>
-<?php include "control/LabTask2.php" ; ?>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-Select image to upload:
-<input type="file" name="fileToUpload" id="fileToUpload">
-<input type="submit" value="Upload Image" name="submit">
-
-<form>
-REGISTRATION::
-
-  <table>
-<tr>
-<td>Name:</td>
-<td><input type="text" id="l" name="lname"></td>
-</tr>
-
-<tr>
-<td>email:</td>
-<td><input type="text" id="e" name="EMAIL"></td>
-</tr>
-<tr>
-
-<td>User Name:</td>
-<td><input type="text" id="d" name="dname"></td>
-</tr>
-<tr>
-<td>Password:</td>
-<td><input type="text" id="p" name="password"></td>
-</tr>
-<tr>
-<td>Confirm Password:</td>
-<td><input type="text" id="p" name="Confirm password"></td>
-</tr>
-</table>
-<p>Gender:</p>
-
-  <input type="radio" id="male" name="gender" value="male">
-  Male<br>
-  <input type="radio" id="female" name="gender" value="female">
-  Female<br>
-  <input type="radio" id="other" name="gender" value="other">
-  Other<br><br>
-  <table>
+    <head>
+     <title>Registration Form</title>
+    </head>
+    <body>
+<h1>Registration</h1>
+<form value="Registration" action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST"> 
+ <table>
+ <tr>
+  <td>
+   Name:
+  </td>
+ <td>
+  <input type="text" id="name" name="name" placeholder="Name">
+   </td>
+ <td>
+   <?php echo $validateName; ?>
+    </td>
+    </tr>
+     <tr>
+     <td>
+      <label>Email:</label>
+       </td>
+       <td>
+        <input type="email" id="email" name="email" placeholder="Email">
+       </td>
+       <td>
+<?php echo $validateEmail; ?>
+  </td>
+   </tr>
+     <tr>
+    <td>
+      <label>User Name:</label>
+       </td>
+       <td>
+         <input type="text" id="username" name="username" placeholder="User Name">
+         </td>
+           <td>
+       <?php echo $validateUserName; ?>
+        </td>
+       </tr>
+      <tr>
+     <td>
+      <label>Password:</label>
+       </td>
+     <td>
+     <input type="password" id="password" name="password" placeholder="Password">
+     </td>
+     <td>
+     <?php echo $validatePassword; ?>
+       </td>
+ </tr>
+ <tr>
+ <td>
+   <label>Cofirm Password:</label>
+  </td>
+  <td>
+<input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+ </td>
+  <td>
+   <?php echo $validateConfirmPassword; ?>
+  </td>
+   </tr>
+               
+     <tr>
+     <td>
+      <label>Gender:</label>
+     </td>
+     <td>
+    <input type="radio" id="gender" name="gender" value="male">
+   <label for="male">Male</lable>
+     <input type="radio" id="gender" name="gender" value="female">
+     <label for="female">Female</lable>
+    <input type="radio" id="gender" name="gender" value="other">
+    <label for="other">Other</lable>
+      </td>
+   <td>
+   <br>
+    <?php echo $validateGender; ?>
+   </td>
+  </tr>
   <tr>
- <td>Birthday:</td>
-  <td><input type="date" id="birthday" name="birthday"></td>
-</tr>
-<tr>
-<td><input type="submit" Value="SUBMIT"></td>
-</tr>
-<tr>
-<td><input type="reset" Value="RESET"></td>
-</tr>
-</table>
-</form>
+ <td>
+  <label>Date of Birth:</label>
+   </td>
+   <td>
+  <input type="date" id="dob" name="dob">
+ </td>
+  <td>
+   <?php echo $validateDob; ?>
+  </td>
+ </tr>
+ <tr>
+ <td> 
+  <input type="submit" value="Submit">
 
+  </td>
+ <td>
 
-
+ </td>
+  </tr>
+ </table>
+           
+ </form>
 </body>
 </html>
